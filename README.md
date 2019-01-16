@@ -2,11 +2,12 @@
 ## 前言
 一月份的时候中国裁判文书网更新了据说是瑞数安全的js混淆动态加密。 <br>
 特征1：params:MmEwMd <br>
-特征2：html9DhefwqGPrzGxEp9hPaoag <br>
+特征2：html:9DhefwqGPrzGxEp9hPaoag <br>
 特征3：cookies：FSSBBIl1UgzbN7N80T
 
 ## 项目
 本项目为破解此Js 加密而立。预计发布时间为2019.1.17
+由于本次项目需求的朋友来自使用各个开发语言，本次sdk将会js的方式提供，各开发者可以根据自己开发语言考虑采用v8引擎执行或语言自带的执行js的函数或者是第三方包。
 
 ## 快乐的爬虫群
 **QQ119794042**
