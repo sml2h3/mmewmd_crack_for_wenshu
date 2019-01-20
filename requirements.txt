@@ -1,1 +1,3 @@
 PyExecJS
+requests
+lxml
