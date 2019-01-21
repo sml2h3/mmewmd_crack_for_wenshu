@@ -59,8 +59,8 @@ python版：guid请自行找算法生成，否则会remind key！！
 
 ### 鼓励
 如果我的项目帮助到了你，可否通过打赏鼓励一下作者
- ![image](http://youjiapp.oss-cn-beijing.aliyuncs.com/1548066223468.jpg)
- ![image](http://youjiapp.oss-cn-beijing.aliyuncs.com/mm_facetoface_collect_qrcode_1548066239153.png)
+ ![image](https://github.com/sml2h3/mmewmd_crack_for_wenshu/blob/master/1548066223468.jpg)
+ ![image](https://github.com/sml2h3/mmewmd_crack_for_wenshu/blob/master/mm_facetoface_collect_qrcode_1548066239153.png)
 
 ## 快乐的爬虫群
 **QQ119794042**
