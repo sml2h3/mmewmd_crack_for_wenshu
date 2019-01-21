@@ -71,7 +71,7 @@ class SpiderManager(object):
         self.data = {
             "Param": "案件类型:民事案件",
             "Index": "",
-            "Page": "10",
+            "Page": "20",
             "Order": "法院层级",
             "Direction": "asc",
             "vl5x": "",
@@ -123,6 +123,8 @@ class SpiderManager(object):
         cookies['wzwsvtime'] = str(int(time.time()))
         self.ywtu = ctx2.call("getc", self.meta)
         self.f80t_n = ctx1.call("getCookies", self.meta, self.f80t, self.ywtu)
+
+        cookies['FSSBBIl1UgzbN7Nenable'] = "true"
         cookies['FSSBBIl1UgzbN7N80S'] = self.f80s
         cookies['FSSBBIl1UgzbN7N80T'] = self.f80t_n
         cookies['wzwsvtime'] = str(int(time.time()))
@@ -139,6 +141,10 @@ class SpiderManager(object):
             return True
         else:
             if self.debug:
+                print(self.meta)
+                print(self.ywtu)
+                print(self.f80t)
+                print(self.f80t_n)
                 print("获取vjkl5失败,code：{}".format(rsp.status_code))
             return False
 
@@ -163,15 +169,16 @@ class SpiderManager(object):
 
     def getContent(self, page):
         url = self.url_for_content
-        self.f80t_n = ctx1.call("getCookies", self.meta, self.f80t_n, self.ywtu)
+        self.f80t_n = ctx1.call("getCookies", self.meta, self.f80t, self.ywtu)
+        print(self.f80t_n)
         vl5x = self.get_vl5x()
-        print(vl5x)
         data = self.data
         data['Index'] = str(page)
         data['vl5x'] = vl5x
         data['guid'] = self.getguid()
         cookies = self.cookies
         cookies['wzwsvtime'] = str(int(time.time()))
+        cookies['FSSBBIl1UgzbN7Nenable'] = "true"
         cookies['FSSBBIl1UgzbN7N80S'] = self.f80s
         cookies['FSSBBIl1UgzbN7N80T'] = self.f80t_n
         cookies['vjkl5'] = self.vjkl5
@@ -196,25 +203,26 @@ class SpiderManager(object):
         return self.content
 
 if __name__ == '__main__':
-    # 实例化并开启调试模式，会返回报错信息
-    spider = SpiderManager(debug=True)
-    # 设置采集条件
-    spider.setconditions("searchWord+2+AJLX++案件类型:民事案件")
-    # 初始化
-    init_status = spider.init()
-    print("初始化成功")
-    status = spider.getvjkl5()
-    if status:
-        print("获取vjkl5成功")
-        status = spider.getContent(page=1)
+    for i in range(10):
+        # 实例化并开启调试模式，会返回报错信息
+        spider = SpiderManager(debug=True)
+        # 设置采集条件
+        spider.setconditions("searchWord+2+AJLX++案件类型:民事案件")
+        # 初始化
+        init_status = spider.init()
+        print("初始化成功")
+        status = spider.getvjkl5()
         if status:
-            print(spider.getData())
+            print("获取vjkl5成功")
+            status = spider.getContent(page=i+1)
+            if status:
+                print(spider.getData())
+            else:
+                print("获取列表页内容失败")
         else:
-            print("获取列表页内容失败")
-
-    else:
-        # 自己写，重新获得getvjkl5
-        pass
+            # 自己写，重新获得getvjkl5
+            pass
+        time.sleep(4)
 
 
 
