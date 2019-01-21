@@ -803,7 +803,10 @@ function _$iU() {
     return "qrcklmDoExthWJiHAp1sVYKU3RFMQw8IGfPO92bvLNj.7zXBaSnu0TC6gy_4Ze5d{}|~ !#$%()*+,-:=?@[]^"
 }
 
-function _$de(p = "") {
+function _$de(p) {
+    if(p == undefined){
+        return ""
+    }
     return p;
 }
 
