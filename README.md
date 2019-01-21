@@ -57,7 +57,10 @@ python版：guid请自行找算法生成，否则会remind key！！
 请clone代码后，清空浏览器缓存打开文书网，把当前的cookies中的FSSBBIl1UgzbN7N80T参数值填写到python代码对应位置直接运行生成的就是MmEwMd参数。
 关于MmEwMd：已经通过比对，确认生成的长度和规则是一致的。
 
-
+### 鼓励
+如果我的项目帮助到了你，可否通过打赏鼓励一下作者
+ ![image](http://youjiapp.oss-cn-beijing.aliyuncs.com/1548066223468.jpg)
+ ![image](http://youjiapp.oss-cn-beijing.aliyuncs.com/mm_facetoface_collect_qrcode_1548066239153.png)
 
 ## 快乐的爬虫群
 **QQ119794042**
