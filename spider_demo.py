@@ -15,12 +15,13 @@
 
 @time: 2019-01-21
 """
-import requests
-import time
-import execjs
-from lxml import etree
 import random
+import time
 from urllib import parse
+
+import execjs
+import requests
+from lxml import etree
 
 with open('encrypt.js', 'r', encoding="utf-8") as f:
     js1 = f.read()
@@ -202,6 +203,7 @@ class SpiderManager(object):
     def getData(self):
         return self.content
 
+
 if __name__ == '__main__':
     for i in range(10):
         # 实例化并开启调试模式，会返回报错信息
@@ -214,7 +216,7 @@ if __name__ == '__main__':
         status = spider.getvjkl5()
         if status:
             print("获取vjkl5成功")
-            status = spider.getContent(page=i+1)
+            status = spider.getContent(page=i + 1)
             if status:
                 print(spider.getData())
             else:
@@ -223,7 +225,3 @@ if __name__ == '__main__':
             # 自己写，重新获得getvjkl5
             pass
         time.sleep(4)
-
-
-
-
