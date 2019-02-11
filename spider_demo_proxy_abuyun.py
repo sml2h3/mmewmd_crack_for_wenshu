@@ -289,38 +289,38 @@ class SpiderManager(object):
 
 if __name__ == '__main__':
     # # 实例化并开启调试模式，会返回报错信息
-    # for i in range(10):
+    for i in range(10):
 
-    spider = SpiderManager(debug=True)
-    # 设置采集条件
-    spider.setconditions("searchWord+2+AJLX++案件类型:民事案件")
-    # 初始化
-    init_status = spider.init()
-    if init_status:
-        print("初始化成功")
-        status = spider.getvjkl5()
-        if status:
-            print("获取vjkl5成功")
-            status = spider.getList(page=1)
+        spider = SpiderManager(debug=True)
+        # 设置采集条件
+        spider.setconditions("searchWord+2+AJLX++案件类型:民事案件")
+        # 初始化
+        init_status = spider.init()
+        if init_status:
+            print("初始化成功")
+            status = spider.getvjkl5()
             if status:
-                print("获取列表页内容成功")
-                print(spider.getListData())
-                docids = spider.getDocIds()
-                if docids:
-                    for item in docids:
-                        spider.getContent(item)
+                print("获取vjkl5成功")
+                status = spider.getList(page=i)
+                if status:
+                    print("获取列表页内容成功")
+                    print(spider.getListData())
+                    docids = spider.getDocIds()
+                    if docids:
+                        for item in docids:
+                            spider.getContent(item)
+                    else:
+                        print("解密失败")
                 else:
-                    print("解密失败")
+                    print("获取列表页内容失败")
+
             else:
-                print("获取列表页内容失败")
+                # 自己写，重新获得getvjkl5
+                pass
 
         else:
-            # 自己写，重新获得getvjkl5
-            pass
-
-    else:
-        print("初始化失败")
-        # continue
-
+            print("初始化失败")
+            # continue
+        requests.get("http://proxy.abuyun.com/switch-ip", proxies=proxies)
 
 
