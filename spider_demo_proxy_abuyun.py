@@ -24,19 +24,8 @@ from urllib import parse
 import re
 import json
 
-proxyHost = "http-pro.abuyun.com"
-proxyPort = "9010"
-
-# 阿布云专业版代理隧道验证信息
-proxyUser = "H1Q13U7854G1143P"
-proxyPass = "810DC24A6B455BB2"
-
-proxyMeta = "http://%(user)s:%(pass)s@%(host)s:%(port)s" % {
-    "host": proxyHost,
-    "port": proxyPort,
-    "user": proxyUser,
-    "pass": proxyPass,
-}
+# 改成你的代理IP，格式为:http://ip:port
+proxyMeta = "http://127.0.0.1:8080"
 
 proxies = {
     "http": proxyMeta,
